@@ -78,6 +78,7 @@
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnIngresar.FlatAppearance.BorderSize = 2;
             this.btnIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
@@ -101,6 +102,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCancelar.FlatAppearance.BorderSize = 2;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick;
