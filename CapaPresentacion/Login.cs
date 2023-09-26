@@ -30,7 +30,7 @@ namespace CapaPresentacion
             Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txtNroDocumento.Text && u.Clave == txtContraseña.Text).FirstOrDefault();
             if (ousuario != null)
             {
-                Inicio inicio = new Inicio();
+                Inicio inicio = new Inicio(ousuario);
 
                 inicio.Show();
                 this.Hide();

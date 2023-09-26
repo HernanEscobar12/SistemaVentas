@@ -38,8 +38,10 @@
             this.MenuClientes = new FontAwesome.Sharp.IconMenuItem();
             this.MenuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.MenuAcercaDe = new FontAwesome.Sharp.IconMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
+            this.lblUsuarioEtiqueta = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.MenuTitular.Location = new System.Drawing.Point(0, 0);
             this.MenuTitular.Name = "MenuTitular";
             this.MenuTitular.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.MenuTitular.Size = new System.Drawing.Size(798, 60);
+            this.MenuTitular.Size = new System.Drawing.Size(971, 61);
             this.MenuTitular.TabIndex = 0;
             this.MenuTitular.Text = "menuStrip1";
             // 
@@ -65,9 +67,9 @@
             this.MenuClientes,
             this.MenuReportes,
             this.MenuAcercaDe});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 60);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 61);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(798, 73);
+            this.menuStrip2.Size = new System.Drawing.Size(971, 73);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -175,33 +177,60 @@
             this.MenuAcercaDe.Text = "Acerca de";
             this.MenuAcercaDe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.SteelBlue;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "SISTEMA DE VENTAS";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(13, 23);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(192, 20);
+            this.lblTitulo.TabIndex = 2;
+            this.lblTitulo.Text = "SISTEMA DE VENTAS";
             // 
             // contenedor
             // 
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(0, 133);
+            this.contenedor.Location = new System.Drawing.Point(0, 134);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(798, 259);
+            this.contenedor.Size = new System.Drawing.Size(971, 258);
             this.contenedor.TabIndex = 3;
+            this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
+            // 
+            // lblUsuarioEtiqueta
+            // 
+            this.lblUsuarioEtiqueta.AutoSize = true;
+            this.lblUsuarioEtiqueta.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblUsuarioEtiqueta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioEtiqueta.ForeColor = System.Drawing.Color.White;
+            this.lblUsuarioEtiqueta.Location = new System.Drawing.Point(702, 23);
+            this.lblUsuarioEtiqueta.Name = "lblUsuarioEtiqueta";
+            this.lblUsuarioEtiqueta.Size = new System.Drawing.Size(74, 17);
+            this.lblUsuarioEtiqueta.TabIndex = 4;
+            this.lblUsuarioEtiqueta.Text = "Usuario: ";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(782, 23);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(12, 17);
+            this.lblUsuario.TabIndex = 5;
+            this.lblUsuario.Text = "l";
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 392);
+            this.ClientSize = new System.Drawing.Size(971, 392);
+            this.Controls.Add(this.lblUsuarioEtiqueta);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.contenedor);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.MenuTitular);
             this.MainMenuStrip = this.MenuTitular;
@@ -220,7 +249,7 @@
 
         private System.Windows.Forms.MenuStrip MenuTitular;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private FontAwesome.Sharp.IconMenuItem MenuAcercaDe;
         private FontAwesome.Sharp.IconMenuItem MenuUsuario;
         private FontAwesome.Sharp.IconMenuItem MenuMantenedor;
@@ -230,6 +259,8 @@
         private FontAwesome.Sharp.IconMenuItem MenuReportes;
         private FontAwesome.Sharp.IconMenuItem MenuClientes;
         private System.Windows.Forms.Panel contenedor;
+        private System.Windows.Forms.Label lblUsuarioEtiqueta;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }
 
