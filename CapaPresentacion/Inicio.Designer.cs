@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.MenuTitular = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.menu = new System.Windows.Forms.MenuStrip();
             this.MenuUsuario = new FontAwesome.Sharp.IconMenuItem();
             this.MenuAdministrador = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuCategoria = new FontAwesome.Sharp.IconMenuItem();
@@ -48,7 +48,7 @@
             this.contenedor = new System.Windows.Forms.Panel();
             this.lblUsuarioEtiqueta = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.menuStrip2.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuTitular
@@ -62,9 +62,9 @@
             this.MenuTitular.TabIndex = 0;
             this.MenuTitular.Text = "menuStrip1";
             // 
-            // menuStrip2
+            // menu
             // 
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuUsuario,
             this.MenuAdministrador,
             this.MenuVentas,
@@ -73,11 +73,11 @@
             this.MenuClientes,
             this.MenuReportes,
             this.MenuAcercaDe});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 61);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(997, 73);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuStrip2";
+            this.menu.Location = new System.Drawing.Point(0, 61);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(997, 73);
+            this.menu.TabIndex = 1;
+            this.menu.Text = "menuStrip2";
             // 
             // MenuUsuario
             // 
@@ -115,7 +115,7 @@
             this.subMenuCategoria.IconColor = System.Drawing.Color.Black;
             this.subMenuCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCategoria.Name = "subMenuCategoria";
-            this.subMenuCategoria.Size = new System.Drawing.Size(180, 22);
+            this.subMenuCategoria.Size = new System.Drawing.Size(125, 22);
             this.subMenuCategoria.Text = "Categoria";
             this.subMenuCategoria.Click += new System.EventHandler(this.subMenuCategoria_Click);
             // 
@@ -125,7 +125,7 @@
             this.subMenuProducto.IconColor = System.Drawing.Color.Black;
             this.subMenuProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProducto.Name = "subMenuProducto";
-            this.subMenuProducto.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProducto.Size = new System.Drawing.Size(125, 22);
             this.subMenuProducto.Text = "Producto";
             this.subMenuProducto.Click += new System.EventHandler(this.subMenuProducto_Click);
             // 
@@ -275,7 +275,6 @@
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(997, 500);
             this.contenedor.TabIndex = 3;
-            this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
             // lblUsuarioEtiqueta
             // 
@@ -310,15 +309,16 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.MenuTitular);
             this.MainMenuStrip = this.MenuTitular;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema De Ventas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
+            this.Load += new System.EventHandler(this.Inicio_Load);
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +327,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip MenuTitular;
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.Label lblTitulo;
         private FontAwesome.Sharp.IconMenuItem MenuAcercaDe;
         private FontAwesome.Sharp.IconMenuItem MenuUsuario;

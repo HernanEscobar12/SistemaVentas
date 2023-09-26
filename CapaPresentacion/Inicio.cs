@@ -25,10 +25,23 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void contenedor_Paint(object sender, PaintEventArgs e)
+        private void Inicio_Load(object sender, EventArgs e)
         {
+            List<Permiso> ListaPermiso = new CN_PERMISO().Listar(usuarioActual.IdUsuario);
+            
+            foreach (IconMenuItem iconMenu in menu.Items)
+            {
+                bool encontrado = ListaPermiso.Any(m => m.NombreMenu == iconMenu.Name);
+
+                if (encontrado == false)
+                {
+                    iconMenu.Visible = false;
+                }
+            }
+
             lblUsuario.Text = usuarioActual.NombreCompleto.ToString();
         }
+        
 
         private void AbrirFormulario(IconMenuItem Menu, Form formulario)
         {
@@ -124,6 +137,5 @@ namespace CapaPresentacion
         }
 
      
-
     }
 }
