@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidad;
 using FontAwesome.Sharp;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CapaPresentacion
 {
@@ -18,11 +19,18 @@ namespace CapaPresentacion
         private static Usuario usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-        public Inicio(Usuario objusuario)
+        public Inicio(Usuario objusuario = null)
         {
+            if (objusuario == null)
+            {
+                usuarioActual = new Usuario() { NombreCompleto = "ADMIN PREFENIDO", IdUsuario = 1 };
 
-            usuarioActual = objusuario;
-            InitializeComponent();
+            }  
+            
+            if (objusuario != null) 
+                usuarioActual = objusuario;
+            
+                InitializeComponent();
         }
 
         private void Inicio_Load(object sender, EventArgs e)

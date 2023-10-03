@@ -9,43 +9,42 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class CD_Permiso
+    public class CD_Rol
     {
-        public List<Permiso> Listar(int idUsuario)
+        public List<Rol> Listar()
         {
-            List<Permiso> lista = new List<Permiso>();
+            List<Rol> lista = new List<Rol>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    string query = "select p.IdRol, NombreMenu from ROL r, PERMISO p, USUARIO u where r.IdRol = p.IdRol and u.IdUsuario = @IdUsuario and u.IdRol = r.IdRol";
+                    string query = "select IdRol, Descripcion from ROL ";
                     SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
-                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
                     cmd.CommandType = CommandType.Text;
+
                     oConexion.Open();
+             
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            lista.Add(new Permiso()
+                            lista.Add(new Rol()
                             {
-                                Orol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]) },
-                                NombreMenu = dr["NombreMenu"].ToString(),
+                                IdRol= Convert.ToInt32(dr["IdRol"]) ,
+                                Descripcion = dr["Descripcion"].ToString(),
 
-                            });; 
+                            });
                         }
                     }
                 }
                 catch (Exception)
                 {
-
-                    lista = new List<Permiso>();
+                    lista = new List<Rol>();
                 }
             }
-
-
-            return lista;
+                return lista;
         }
+
     }
 }

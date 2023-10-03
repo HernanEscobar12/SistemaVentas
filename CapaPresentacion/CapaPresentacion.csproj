@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\OpcionesCombo.cs" />
     <EmbeddedResource Include="frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>

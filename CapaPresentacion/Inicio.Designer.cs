@@ -282,7 +282,7 @@
             this.lblUsuarioEtiqueta.BackColor = System.Drawing.Color.SteelBlue;
             this.lblUsuarioEtiqueta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioEtiqueta.ForeColor = System.Drawing.Color.White;
-            this.lblUsuarioEtiqueta.Location = new System.Drawing.Point(798, 23);
+            this.lblUsuarioEtiqueta.Location = new System.Drawing.Point(800, 23);
             this.lblUsuarioEtiqueta.Name = "lblUsuarioEtiqueta";
             this.lblUsuarioEtiqueta.Size = new System.Drawing.Size(74, 17);
             this.lblUsuarioEtiqueta.TabIndex = 4;
@@ -294,7 +294,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.SteelBlue;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(878, 23);
+            this.lblUsuario.Location = new System.Drawing.Point(880, 23);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(81, 17);
             this.lblUsuario.TabIndex = 5;

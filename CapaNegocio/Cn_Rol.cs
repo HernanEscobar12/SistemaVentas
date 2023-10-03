@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class CN_PERMISO
+    public class Cn_Rol
     {
+        private CD_Rol objcd_Rol = new CD_Rol();
 
-        private CD_Permiso objcd_Permiso = new CD_Permiso();
-
-        public List<Permiso> Listar(int IdUsuario)
+        public List<Rol> Listar()
         {
-            return objcd_Permiso.Listar(IdUsuario);
+            return objcd_Rol.Listar();
         }
+
     }
 }
